@@ -8,25 +8,31 @@ import download from '../../Assets/download-svg.svg'
 import UndoIcon from '@material-ui/icons/Undo';
 import RedoIcon from '@material-ui/icons/Redo';
 
-const Toolbar = () =>{
+const Toolbar = ({ setBrush }) =>{
+    const handleBrush = (type,val) =>{
+        setBrush( prevState =>({...prevState,[type]:val}))
+    }
+    const handleEraser = () =>{
+        setBrush(prevState=>({size:40,color:"#ffffff"}))
+    }
     return(
         <div class="tool-bar">
             <div class="strokes">
-                <div class="pencil">
+                <div class="pencil" onClick={()=>handleBrush("size",5)}>
                     <img
                         src={pencil}
                         alt="Eraser"
                         height="30px"
                         width="50px" />
                 </div>
-                <div class="pen">
+                <div class="pen" onClick={()=>handleBrush("size",10)}>
                     <img
                         src={pen}
                         alt="Eraser"
                         height="30px"
                         width="50px" />
                 </div>
-                <div class="brush">
+                <div class="brush" onClick={()=>handleBrush("size",20)}>
                     <img
                         src={brush}
                         alt="Eraser"
@@ -36,10 +42,10 @@ const Toolbar = () =>{
             </div>
 
             <div class="colors">
-                <div class="color red"></div>
-                <div class="color green"></div>
-                <div class="color blue"></div>
-                <div class="color orange"></div>
+                <div class="color red" onClick={()=>handleBrush("color","#ff0000")}></div>
+                <div class="color green" onClick={()=>handleBrush("color","#006400")}></div>
+                <div class="color blue" onClick={()=>handleBrush("color","#0018f5")}></div>
+                <div class="color black" onClick={()=>handleBrush("color","#030303")}></div>
             </div>
 
             <div class="undo-redo-btns">
@@ -50,7 +56,7 @@ const Toolbar = () =>{
                     <RedoIcon />
                 </div>
             </div>
-            <div class="eraser">
+            <div class="eraser" onClick={()=>handleEraser()}>
                 <img
                     src="https://d29fhpw069ctt2.cloudfront.net/icon/image/49319/preview.svg"
                     alt="Eraser"
@@ -74,8 +80,5 @@ const Toolbar = () =>{
         </div>
     )
 }
-    
-        
-    
 
 export default Toolbar

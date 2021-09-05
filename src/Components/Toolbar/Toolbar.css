@@ -2,7 +2,7 @@
     top: 2rem;
     display: flex;
     justify-content: space-around;
-    width:fit-content;
+    width:600px;
     height: 60px;
     align-items: center;
     background-color: rgb(243, 242, 242);
@@ -44,13 +44,13 @@
     margin-bottom: 10px;
   }
   .red {
-    background-color: red;
+    background-color: #ff0000;
   }
   .blue {
     background-color: #0018f5;
   }
-  .orange {
-    background-color: #f53d00;
+  .black {
+    background-color: #030303;
   }
   .green {
     background-color: #006400;
