@@ -1,0 +1,84 @@
+    .tool-bar {
+    top: 2rem;
+    display: flex;
+    justify-content: space-around;
+    width:fit-content;
+    height: 60px;
+    align-items: center;
+    background-color: rgb(243, 242, 242);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .colors, .strokes{
+     display: flex;
+    justify-content: center;
+  }
+  
+  .pencil, .brush, .pen, .eraser, .clear-btn, .save-btn , .download-btn{
+    height: 30px;
+    width: 20px;
+    transform: scale(1.22);
+    font-size: 2rem;
+    color: black;
+  }
+  .pencil, .brush, .pen{
+    margin-left: 20px;
+  }
+  
+  .pencil:hover, .brush:hover, .pen:hover, .eraser:hover, .clear-btn:hover, .save-btn:hover, .download-btn:hover{
+  transform: scale(1.30);
+  cursor: pointer;
+  }
+  .color {
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    margin-left:5px;
+  }
+  .color:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+  }
+  .download-btn{
+    margin-bottom: 10px;
+  }
+  .red {
+    background-color: red;
+  }
+  .blue {
+    background-color: #0018f5;
+  }
+  .orange {
+    background-color: #f53d00;
+  }
+  .green {
+    background-color: #006400;
+  }
+  
+  .eraser {
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+  }
+  
+  .eraser:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+  }
+  
+  .undo-redo-btns {
+    display: flex;
+  }
+  
+  .undo-btn,
+  .redo-btn {
+    margin-left: 10px;
+    transform: scale(1.25);
+  }
+  
+  .undo-btn :hover,
+  .redo-btn :hover {
+    cursor: pointer;
+    transform: scale(1.28);
+  }
