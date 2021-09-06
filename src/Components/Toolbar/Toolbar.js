@@ -8,8 +8,11 @@ import download from '../../Assets/download-svg.svg'
 import UndoIcon from '@material-ui/icons/Undo';
 import RedoIcon from '@material-ui/icons/Redo';
 
-const Toolbar = ({ setBrush }) =>{
+const Toolbar = ({ setBrush, brush }) =>{
     const handleBrush = (type,val) =>{
+        if(type === "size" && brush.color === "#ffffff"){
+            setBrush(prevState=>({size: val,color: "#030303"}))
+        }
         setBrush( prevState =>({...prevState,[type]:val}))
     }
     const handleEraser = () =>{

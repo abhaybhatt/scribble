@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import './Canvas.css'
 
 
-const Canvas = ({ brushColor }) =>{
+const Canvas = ({ brush }) =>{
     const canvasRef = useRef(null)
     const contextRef = useRef(null)
     const[isDrawing, setIsDrawing] = useState(false)
@@ -21,7 +21,15 @@ const Canvas = ({ brushColor }) =>{
     },[])
     const startDrawing = ({ nativeEvent }) => {
     const { offsetX, offsetY } = nativeEvent;
+    
     contextRef.current.beginPath();
+    
+    if( contextRef.current.lineWidth !== brush.size){
+      contextRef.current.lineWidth = brush.size
+    }
+    if (contextRef.current.strokeStyle !== brush.color) {
+      contextRef.current.strokeStyle = brush.color;
+    }
     contextRef.current.moveTo(offsetX, offsetY);
     setIsDrawing(true);
   };
